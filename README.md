@@ -5,10 +5,10 @@ Fontes:
 - Curso DevOps: trabalhando com tráfego seguro em comunicações web
 
 Referencias:
-- [text](https://www.guiafoca.org/)
-- [text](https://www.alura.com.br/artigos/linux)
+- [GuiaFoca](https://www.guiafoca.org/)
+- [Artigo Linux](https://www.alura.com.br/artigos/linux)
 
-Modelo do documento.MD baseado em: [text](https://github.com/denisfreitas999/DevOps-Guide)
+Modelo do documento.MD baseado em: [github/denisfreitas](https://github.com/denisfreitas999/DevOps-Guide)
 
 ## Curso DevOps: explorando conceitos, comandos e scripts no Linux CLI 
 - [x] **Aula 01 Linux e DevOps - Fundamentos**:
