@@ -1,10 +1,7 @@
-Aqui está a formatação refeita para o último bloco de notas, utilizando uma sintaxe Markdown mais universal para garantir a compatibilidade.
-
----
-
 ## Curso Certificação Oracle Cloud Infraestructure: explorando o ambiente e funcionalidades.
 
 - **Aula 01 Entendendo OCI**
+
 
     - OCI trabalha com 3 níveis de serviço:
         1.  **Infraestrutura:** Programação, VMs, Containers, LoadBalance, Monitoramento, Segurança.
@@ -25,6 +22,17 @@ Aqui está a formatação refeita para o último bloco de notas, utilizando uma 
         - **Nuvem dedicada:** Espaço físico exclusivo para um cliente.
         - **Oracle Alloy:** Nuvem personalizada.
         - **Oracle Cloud at Customer:** Serviço de nuvem rodando no data center do próprio cliente.
+`1. Tenancy: Sua conta na OCI.`
+
+`2. Compartimentos: Contêineres lógicos para organizar e controlar o acesso aos recursos (no mesmo nível das regiões).`
+
+`3. Regiões: Localizações geográficas (como São Paulo ou Vinhedo) dentro da sua Tenancy.`
+
+`4. Domínios de Disponibilidade (ADs): Datacenters independentes dentro de uma região.`
+
+`5. Virtual Cloud Network (VCN): Rede virtual privada que reside dentro de uma região e abrange um ou mais ADs.`
+
+`6. Sub-redes: Segmentos da VCN onde você aloca seus recursos (instâncias, bancos de dados, etc.).`
 
     > #### Cenário de Alta Disponibilidade
     >
@@ -100,3 +108,69 @@ Aqui está a formatação refeita para o último bloco de notas, utilizando uma 
     > **Exemplo:** Uma loja de varejo pode manter seu sistema de estoque *on-premises* e rodar seu site de e-commerce na nuvem OCI. Usando `FastConnect`, o site na nuvem pode consultar o estoque local em tempo real de forma segura e rápida.
 
     - **Load Balancer:** Distribui o tráfego de rede entre múltiplos servidores para garantir alta disponibilidade e desempenho.
+
+
+    - **Aula 04 Compute**
+
+    Visto os conteudos anteriores, chegamos a parte de Compute da OCI. Nessa parte, utiliza-se todos os conhecimentos anteriores (dominio de disponibilidade, compartment, VCN, tenancy).
+
+### Resumo dos Conceitos Essenciais da OCI
+
+- **Instância:** Um servidor virtual (VM) ou físico (Bare Metal) criado na OCI para executar aplicações e serviços.
+
+- **Compartment:** Contêiner lógico para organizar e isolar recursos, controlar acesso, aplicar políticas de segurança e gerenciar custos.
+
+- **VCN (Virtual Cloud Network):** Rede virtual privada na OCI, permitindo comunicação segura entre instâncias e configuração de sub-redes, roteamento e gateways.
+
+- **Domínio de Disponibilidade (AD):** Datacenters isolados dentro de uma região, garantindo alta disponibilidade e tolerância a falhas.
+
+- **Tenancy:** Raiz da conta na OCI, representando a organização e contendo todos os recursos, compartments e políticas.
+
+#### Hierarquia da OCI:
+1. **Tenancy:** Nível mais alto, representando a conta.
+2. **Compartment:** Organização de recursos em "pastas".
+3. **VCN:** Rede virtual privada dentro de um compartment.
+4. **Domínio de Disponibilidade (AD):** Datacenter dentro de uma região.
+5. **Instância:** Máquina virtual ou física criada em uma VCN e AD.
+
+#### Analogia:
+- **Tenancy:** O prédio inteiro (sua empresa).
+- **Compartments:** Andares do prédio (departamentos).
+- **VCN:** Rede interna de cada andar.
+- **Instâncias:** Computadores individuais nos andares.
+- **Domínios de Disponibilidade:** Prédios diferentes no mesmo complexo, garantindo continuidade em caso de falhas.
+
+ssh -i ssh-key-ARQUIVO-CHAVE.key -p PORTA-SSH USUARIO@IP_DO_SERVIDOR
+
+Pós maquina criada, com OS e capacidade escolhido, é só acessar via SSH. Esse serviço da OCI visa solucionar os diversos problemas de manter uma estrutura física, como:
+
+- Custo de hardware e manutenção
+- Dificuldade de escalabilidade
+- Baixo desempenho e limitacões tecnicas
+- Complexidade de gerenciamento
+
+Dessa forma, cria-se um ambiente virtual ou bare metal, que conta com toda estrutura de REDE fornecida, com um sistema operacional escolhido, processadores de diferentes marcas, volumes de armazenamento escolhidos...
+Enfim, tem uma sequencia de configurações recomendadas para as maquinas, como deixar a OCI escolher um dominio de falha especifico, algo nesse sentido. 
+Também tem o recurso de Live Migration, que ajuda a prevenir falhas
+
+**Scanling e OKE**
+
+- O Scaling é a capacidade de aumentar ou reduzir recursos computacionais conforme a demanda da aplicação, de forma manual ou automática. Nos interessa essa possibilidade devido a possíveis momentos de alta demanda em um servidor, ou então de demanda reduzida e recurso sobrando. Ademais, essa possibilidade de mudança de escala é importante em aplicações distribuidas.
+
+O *Scaling vertical*, se trata de modificar recursos computacionais ligados a memória e processamento, enquanto *Scaling horizontal* esta ligado a 
+
+Vertical - planejado, fora do horário de produção (pode gerar um downtime no servidor, ocasionando perdas)
+
+Scaling vertical significa aumentar a capacidade computacional (memoria e cpu) de UMA determinada instância, enquanto scaling horizontal é aumentar a quantiade DE INSTANCIAS ?
+
+- OKE Oracle Kubernates Engine é um mecanismo oferecido pela Oracle, mas você pode escolher gerenciar manualmente.
+
+Serviço gerenciado de Kubernates da Oracle
+
+- Oracle Functions - Serviço Servless(sem servidor) dentro da OCI
+
+
+
+
+
+  
